@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>My Address Book</title>
+  </head>
+  <body>
+    <br>
+    <h1>Address Book</h1>
+    <br>
+    <div class="container">
+      <form class="addressForm">
+
+        <div class="form-group">
+          <label for="firstName">Enter your first name:</label>
+          <input type="text" id="firstName">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Enter your last name:</label>
+          <input type="text" id="lastName">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Enter your phone number:</label>
+          <input type="number" id="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Enter your email:</label>
+          <input type="text" id="email">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Enter your address:</label>
+          <input type="text" id="address">
+        </div>
+        <br>
+        <button type="submit" name="button">Submit</button>
+      </form>
+
+      <div class="contactList">
+        <ul id="contactList">
+          <!-- <li id="fullName"></li> -->
+        </ul>
+
+      </div>
+    </div>
+  </body>
+</html>
