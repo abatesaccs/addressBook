@@ -17,6 +17,16 @@
           <h2>Add a Contact:</h2>
           <form id="new-contact">
             <div class="form-group">
+              <label for="typeOfAddressBook">Choose type of Address book</label>
+              <select class="form-control" id="typeOfAddressBook">
+                <option value="1">Friends</option>
+                <option value="2">Co-workers</option>
+                <option value="3">Acquaintances</option>
+              </select>
+
+              <!-- <button type="button" id="chooseTypeOfBook" class="btn btn-secondary">Select</button> -->
+            </div>
+            <div class="form-group">
               <label for="new-first-name">First Name</label>
               <input type="text"  class="form-control" id="new-first-name">
             </div>
@@ -48,7 +58,20 @@
           </form>
           <hr>
           <h2>Contacts:</h2>
-          <ul id="contacts">
+          <div class="form-group">
+            <label for="typeOfDisplayedAddressBook">Choose type of Address book</label>
+            <select class="form-control" id="typeOfDisplayedAddressBook">
+              <option value="1">Friends</option>
+              <option value="2">Co-workers</option>
+              <option value="3">Acquaintances</option>
+            </select>
+            <button type="button" id="chooseTypeOfDisplayedBook" class="btn btn-secondary">Select</button>
+          </div>
+          <ul id="friends-contacts">
+          </ul>
+          <ul id="co-workers-contacts">
+          </ul>
+          <ul id="acquaintances-contacts">
           </ul>
         </div>
         <div class="col-md-6">

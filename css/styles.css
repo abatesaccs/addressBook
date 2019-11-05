@@ -5,3 +5,8 @@
 .additionalEmail {
   display: none;
 }
+
+.hovered {
+  text-decoration: underline;
+  cursor: pointer;
+}
