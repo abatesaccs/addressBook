@@ -1,9 +1,3 @@
-.contactList {
+#show-contact {
   display: none;
-}
-
-.contactList li {
-  text-decoration: underline;
-  color: blue;
-  cursor: pointer
 }
