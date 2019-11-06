@@ -10,3 +10,18 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+.address {
+  border: 1px solid lightgrey;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn-light {
+  border: 1px solid lightgrey;
+}
+
+.addressText {
+  display: block;
+  margin-bottom: 10px;
+}

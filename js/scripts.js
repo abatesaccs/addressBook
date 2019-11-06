@@ -38,6 +38,23 @@ AddressBook.prototype.deleteContact = function(id) {
   return false;
 }
 
+function Address(street, city, state, country){
+  this.street = street;
+  this.city = city;
+  this.country = country;
+  this.state = state;
+}
+
+Address.prototype.getAddress = function(){
+  if (this.state) {
+    var formatted = (this.street + "<br>" + this.city + ", " + this.state + ", " + this.country);
+    return formatted;
+  } else {
+    var formatted = (this.street + "<br>" + this.city + ", " + this.country);
+    return formatted;
+  }
+}
+
 // Business logic for Contacts ------------------
 function Contact(firstName, lastName, phoneNumber, emails, workAddress, homeAddress) {
   this.firstName = firstName,
@@ -56,6 +73,8 @@ Contact.prototype.fullName = function() {
 var friendsAddressBook = new AddressBook(0, "friends");
 var coWorkersAddressBook = new AddressBook(1, "co-workers");
 var acquaintancesAddressBook = new AddressBook(2, "acquaintances");
+
+
 
 function displayContactDetails(addressBookToDisplay) {
   //$("ul").hide();
@@ -135,6 +154,7 @@ function attachContactListeners() {
   }).on("click", "li", function(){
     clicked = true;
   }).mouseleave(function(){
+    $(this).removeClass("hovered");
     if (!clicked) {
       $("#show-contact").hide();
     }
@@ -177,13 +197,22 @@ function resetFields() {
   }
   emailCounter = 1;
   $(".additionalEmail").hide();
-  $("input#new-work-address").val("");
-  $("input#new-home-address").val("");
+  $("input#new-home-street").val("");
+  $("input#new-home-city").val("");
+  $("input#new-home-state").val("");
+  $("input#new-home-country").val("");
+  $("input#new-work-street").val("");
+  $("input#new-work-city").val("");
+  $("input#new-work-state").val("");
+  $("input#new-work-country").val("");
+
 }
 
 $(function() {
   attachContactListeners();
 
+  var addressOne;
+  var addressTwo;
 
   $("form#new-contact").submit(function(event) {
     event.preventDefault();
@@ -191,6 +220,22 @@ $(function() {
     var inputtedFirstName = $("#new-first-name").val();
     var inputtedLastName = $("#new-last-name").val();
     var inputtedPhoneNumber = $("#new-phone-number").val();
+
+    var workStreet = $("#new-work-street").val();
+    var workCity = $("#new-work-city").val();
+    var workState = $("#new-work-state").val();
+    var workCountry = $("#new-work-country").val();
+
+    var homeStreet = $("#new-home-street").val();
+    var homeCity = $("#new-home-city").val();
+    var homeState = $("#new-home-state").val();
+    var homeCountry = $("#new-home-country").val();
+
+    addressOne = new Address(workStreet, workCity, workState, workCountry);
+    addressTwo = new Address(homeStreet, homeCity, homeState, homeCountry);
+
+    var inputtedWorkAddress = addressOne.getAddress();
+    var inputtedHomeAddress = addressTwo.getAddress();
 
     var inputtedEmails = [];
     for (var i=1; i <= 4; i++) {
@@ -200,9 +245,6 @@ $(function() {
         inputtedEmails.push(inputtedEmail);
       }
     }
-
-    var inputtedWorkAddress = $("#new-work-address").val();
-    var inputtedHomeAddress = $("#new-home-address").val();
 
     //resetting fields
     resetFields();

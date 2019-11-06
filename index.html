@@ -44,17 +44,33 @@
               <input type="email"  class="form-control additionalEmail" id="new-email2">
               <input type="email"  class="form-control additionalEmail" id="new-email3">
               <input type="email"  class="form-control additionalEmail" id="new-email4">
-              <button type="button" id="add-new-email">Add one more email address</button>
+              <button type="button" class="btn btn-light" id="add-new-email">Add one more email address</button>
             </div>
-            <div class="form-group">
-              <label for="new-work-address">Work address</label>
-              <input type="text"  class="form-control" id="new-work-address">
+            <div class="form-group address">
+              <label>Work Address</label>
+              <br>
+              <label for="new-work-street">Street:</label>
+              <input type="text"  class="form-control" id="new-work-street">
+              <label for="new-work-city">City:</label>
+              <input type="text" class="form-control" id="new-work-city">
+              <label for="new-work-state">State:</label>
+              <input type="text" class="form-control" id="new-work-state">
+              <label for="new-work-country">Country:</label>
+              <input type="text" class="form-control" id="new-work-country">
             </div>
-            <div class="form-group">
-              <label for="new-home-address">Home address</label>
-              <input type="text"  class="form-control" id="new-home-address">
+            <div class="form-group address">
+              <label>Home address</label>
+              <br>
+              <label for="new-home-street">Street:</label>
+              <input type="text"  class="form-control" id="new-home-street">
+              <label for="new-home-city">City:</label>
+              <input type="text" class="form-control" id="new-home-city">
+              <label for="new-home-state">State:</label>
+              <input type="text" class="form-control" id="new-home-state">
+              <label for="new-home-country">Country:</label>
+              <input type="text" class="form-control" id="new-home-country">
             </div>
-            <button type="submit" class="btn-primary">Add</button>
+            <button type="submit" class="btn btn-primary">Add</button>
           </form>
           <hr>
           <h2>Contacts:</h2>
@@ -80,8 +96,8 @@
             <p>Last Name: <span class="last-name"></span></p>
             <p>Phone Number: <span class="phone-number"></span></p>
             <p>Emails: <span class="emails"></span></p>
-            <p>Work Address: <span class="work-address"></span></p>
-            <p>Home Address: <span class="home-address"></span></p>
+            <p><span class="addressText">Work Address: </span><span class="work-address"></span></p>
+            <p><span class="addressText">Home Address: </span><span class="home-address"></span></p>
             <div id="buttons">
             </div>
           </div>
